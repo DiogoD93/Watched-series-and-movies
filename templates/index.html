@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container d-flex flex-wrap justify-content-center">
+    <div class="row justify-content-end cols-2" style="margin-top: 10px;">
+        <div class="col">
+            <div class="card" style="background-size: cover; background-image: url(' https://img.freepik.com/free-photo/people-watching-streaming-service-together-indoors_23-2149007894.jpg?t=st=1723039766~exp=1723043366~hmac=bde2f1c4668b74a19a13abca8b068f44405e9df4931b186bcbd29311222dcfe5&w=740 ');">
+                <a href=" {{ url_for('list', type= 'serie') }} " class="card-link">
+                    <div class="content">
+                        <p class="heading"> SERIES </p>
+                    </div>
+                </a>
+            </div>
+        </div>    
+
+        <div class="col">
+            <div class="card" style="background-size: cover; background-image: url(' https://img.freepik.com/free-photo/pretty-brunette-watching-movie_23-2147803805.jpg?t=st=1723036336~exp=1723039936~hmac=0cd7f5262d3de3f120d1c5e29d204d0ad607327a301a7d55497fe5d05704c0fe&w=740 ');">
+                <a href=" {{ url_for('list', type= 'movie') }} " class="card-link">
+                    <div class="content">
+                        <p class="heading"> MOVIES </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>    
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex flex-wrap justify-content-center">
+    {% for entry in list %}
+        <div class="img-card-container">
+            <div class="img-card">
+                <div class="img-content">
+                    <img src=" {{ entry.img_url }} " class="img-content">                    
+                </div>
+            <div class="img-card-content">
+                <p class="heading"> {{ entry.title }}</p>
+                <p style="font-weight: 800;">
+                {{ entry.year }}
+                </p>
+                <a href="{{ url_for('delete', id= entry.id) }}">
+                    <button class="delete-button">
+                        <p class="text">Delete</p>
+                    </button>
+                </a>
+            </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block styles %}
+
+    {{ bootstrap.load_css() }}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" /> 
+
+    {% endblock %}
+    
+    <title> {% block title %} My watched movies and series {% endblock %} </title>
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="{{ url_for('home') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4 header">My watched series and movies</span>
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href=" {{ url_for('add', type='serie') }} " class="nav-link">Add series</a></li>
+                <li class="nav-item"><a href=" {{ url_for('add', type='movie') }} " class="nav-link">Add movie</a></li>
+            </ul>
+        </header>
+    </div>
+</head>
+<body>
+    {% block content %} {% endblock %}
+</body>
+</html>

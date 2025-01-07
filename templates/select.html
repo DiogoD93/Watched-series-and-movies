@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+{% for entry in list %}
+
+    {% if type == "movie" %}
+        <p>
+            <a href=" {{ url_for('select', type = 'movie', id = entry.id) }} "> {{ entry.title }} - {{ entry.release_date }} </a>
+            <br><br> 
+        </p>
+    {% else %}
+        <p>
+            <a href=" {{ url_for('select', type = 'serie', id = entry.id) }}"> {{ entry.name }} - {{ entry.first_air_date }} </a>
+            <br><br> 
+        </p>
+    {% endif %}
+{% endfor %}
+
+</div>
+{% endblock %}
